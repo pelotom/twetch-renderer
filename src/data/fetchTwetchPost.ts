@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-use-before-define */
-
 import BPU, { Out } from "bpu";
 import { request } from "graphql-request";
 import { bitcoinFilesUrlRegex, twetchUrlRegex } from "../util";

@@ -1,6 +1,4 @@
-/* eslint-disable jsx-a11y/alt-text */
-
-import React from "react";
+import React from 'react';
 
 interface MediaGridProps {
   media: { type: "image" | "video"; url: string }[];
