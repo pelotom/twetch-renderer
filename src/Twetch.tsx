@@ -6,7 +6,7 @@ import MediaGrid from "./MediaGrid";
 import useAsync from "./useAsync";
 import { genericUrlRegex } from "./util";
 
-import "./Twetch.css";
+// import "./Twetch.css";
 
 export interface TwetchProps {
   txid: string;
