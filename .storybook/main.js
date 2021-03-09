@@ -1,10 +1,24 @@
 module.exports = {
-  "stories": [
-    "../src/**/*.stories.mdx",
-    "../src/**/*.stories.@(js|jsx|ts|tsx)"
+  stories: [
+    "./stories.tsx"
   ],
-  "addons": [
-    "@storybook/addon-links",
+  addons: [
     "@storybook/addon-essentials"
-  ]
+  ],
+  webpackFinal
+}
+
+async function webpackFinal(config, { configType }) {
+  config.node = {
+    // module: 'empty',
+    // dgram: 'empty',
+    // dns: 'mock',
+    fs: 'empty',
+    // http2: 'empty',
+    // net: 'empty',
+    // tls: 'empty',
+    // child_process: 'empty',
+  }
+
+  return config;
 }
