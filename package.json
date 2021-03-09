@@ -2,8 +2,8 @@
   "name": "twetch-renderer",
   "version": "0.1.0",
   "description": "A renderer of Twetch posts",
-  "main": "./lib/index.js",
-  "types": "./lib/index.d.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "dependencies": {
     "@types/react": "^17.0.3",
     "bpu": "^0.0.13",
