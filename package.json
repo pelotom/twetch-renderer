@@ -16,6 +16,7 @@
     "@storybook/addon-essentials": "^6.1.21",
     "@storybook/react": "^6.1.21",
     "babel-loader": "^8.2.2",
+    "prettier": "^2.2.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
@@ -25,6 +26,7 @@
   "scripts": {
     "build": "tsc --pretty",
     "build-storybook": "build-storybook",
+    "format": "node scripts/format.js",
     "storybook": "start-storybook -p 6006"
   }
 }
