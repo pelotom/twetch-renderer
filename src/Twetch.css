@@ -1,0 +1,104 @@
+.Twetch {
+    width: 598px;
+    border-radius: 6px;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    white-space: pre-wrap;
+  }
+  
+  .Twetch--Quoted {
+    width: auto;
+    border: 1px solid #696969;
+    cursor: pointer;
+    position: relative;
+    background: #010101;
+    border-radius: 6px;
+  }
+  
+  .Twetch--Header {
+    display: flex;
+    padding: 16px 16px 0 16px;
+    border-radius: 4px 4px 0 0;
+  }
+  .Twetch--Quoted > .Twetch--Header {
+    padding: 8px;
+    background: #696969;
+  }
+  
+  .Twetch--Header p {
+    margin: 0;
+  }
+  
+  .Twetch--Header > a {
+    display: inline-block;
+    position: relative;
+    margin-right: 12px;
+    vertical-align: top;
+  }
+  
+  .Twetch--Header > a > * {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    border-radius: 100%;
+    background-repeat: no-repeat;
+  }
+  
+  .Twetch--User {
+    flex-grow: 1;
+    max-width: 100%;
+    width: 100%;
+    display: inline-block;
+  }
+  .Twetch--User > a {
+    line-height: 24px;
+    color: #f2f2f2;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    font-size: 16px;
+    max-width: calc(100% - 64px);
+    font-weight: bold;
+    line-height: 24px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    vertical-align: top;
+    text-decoration: none;
+  }
+  .Twetch--User > p {
+    line-height: 24px;
+    color: #c4c4c4;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 24px;
+    margin-left: 6px;
+    vertical-align: top;
+  }
+  
+  .Twetch--Timestamp {
+    line-height: 24px;
+    color: #c4c4c4;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 24px;
+    margin-left: 6px;
+    vertical-align: top;
+    font-family: proxima-nova, Helvetica;
+    white-space: nowrap;
+  }
+  
+  .Twetch .Twetch--Body {
+    margin: 16px;
+  }
+  
+  .Twetch--Quoted .Twetch--Body {
+    margin: 8px;
+  }
+  
+  .Twetch--Body > :not(:first-child) {
+    margin-top: 8px;
+  }
+  
