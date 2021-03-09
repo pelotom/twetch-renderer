@@ -1,4 +1,4 @@
-import renderYouTube from "./renderers/renderYouTube";
+import renderYouTube from './renderers/renderYouTube';
 
 interface LinkPreviewProps {
   text: string;

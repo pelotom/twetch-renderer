@@ -1,10 +1,10 @@
-import React, { useCallback } from "react";
-import fetchTwetchPost from "./data/fetchTwetchPost";
-import LinkPreview from "./LinkPreview";
-import TwitterPreview from "./TwitterPreview";
-import MediaGrid from "./MediaGrid";
-import useAsync from "./useAsync";
-import { genericUrlRegex } from "./util";
+import React, { useCallback } from 'react';
+import fetchTwetchPost from './data/fetchTwetchPost';
+import LinkPreview from './LinkPreview';
+import TwitterPreview from './TwitterPreview';
+import MediaGrid from './MediaGrid';
+import useAsync from './useAsync';
+import { genericUrlRegex } from './util';
 
 // import "./Twetch.css";
 
@@ -19,15 +19,7 @@ export default function Twetch({ txid, quoted }: TwetchProps) {
 
   if (!post) return <span>Loading...</span>;
 
-  const {
-    createdAt,
-    user,
-    text,
-    bitcoinFilesMedia,
-    quotedTwetch,
-    twitterData,
-    files
-  } = post;
+  const { createdAt, user, text, bitcoinFilesMedia, quotedTwetch, twitterData, files } = post;
 
   const richText = text.split(genericUrlRegex).map((segment, index) =>
     genericUrlRegex.test(segment) ? (
@@ -36,18 +28,18 @@ export default function Twetch({ txid, quoted }: TwetchProps) {
       </a>
     ) : (
       segment
-    )
+    ),
   );
 
   return (
-    <div className={`Twetch${quoted ? " Twetch--Quoted" : ""}`}>
+    <div className={`Twetch${quoted ? ' Twetch--Quoted' : ''}`}>
       <div className="Twetch--Header">
         <a href={`/u/${user.id}`}>
           <div
             style={{
-              backgroundPosition: "center center",
-              backgroundSize: "cover",
-              backgroundImage: `url(${user.icon})`
+              backgroundPosition: 'center center',
+              backgroundSize: 'cover',
+              backgroundImage: `url(${user.icon})`,
             }}
           ></div>
         </a>

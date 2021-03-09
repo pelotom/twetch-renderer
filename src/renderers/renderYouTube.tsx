@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const youtubeRegex1 = /https:\/\/www\.youtube\.com\/watch?.*v=([_a-zA-Z0-9]+).*/i;
 const youtubeRegex2 = /https:\/\/youtu.be\/([_a-zA-Z0-9]+)/i;

@@ -1,6 +1,6 @@
 import React from 'react';
-import Twetch, { TwetchProps } from "./Twetch";
+import Twetch, { TwetchProps } from './Twetch';
 
-export default function TwetchRenderer(props: Omit<TwetchProps, "quoted">) {
+export default function TwetchRenderer(props: Omit<TwetchProps, 'quoted'>) {
   return <Twetch {...props} />;
 }

@@ -1,12 +1,8 @@
 module.exports = {
-  stories: [
-    "./stories.tsx"
-  ],
-  addons: [
-    "@storybook/addon-essentials"
-  ],
-  webpackFinal
-}
+  stories: ['./stories.tsx'],
+  addons: ['@storybook/addon-essentials'],
+  webpackFinal,
+};
 
 async function webpackFinal(config, { configType }) {
   config.node = {
@@ -18,7 +14,7 @@ async function webpackFinal(config, { configType }) {
     // net: 'empty',
     // tls: 'empty',
     // child_process: 'empty',
-  }
+  };
 
   return config;
 }
