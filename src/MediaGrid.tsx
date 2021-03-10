@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import React from 'react';
 
 interface MediaGridProps {
@@ -9,10 +10,10 @@ export default function MediaGrid({ media }: MediaGridProps) {
 
   return (
     <ul
-      className={
-        'twetch-renderer__media-grid' +
-        (media.length > 1 ? ' twetch-renderer__media-grid--multi' : '')
-      }
+      className={clsx(
+        'twetch-renderer__media-grid',
+        media.length > 1 && 'twetch-renderer__media-grid--multi',
+      )}
     >
       {media.map(({ type, url }, index: number) => (
         <li

@@ -5,6 +5,7 @@ import MediaGrid from './MediaGrid';
 import TwitterPreview from './TwitterPreview';
 import useAsync from './useAsync';
 import { genericUrlRegex } from './util';
+import clsx from 'clsx';
 
 // import "./Twetch.css";
 
@@ -18,7 +19,7 @@ export default function TwetchRenderer({ txid, quoted = false }: TwetchRendererP
   const post = useAsync(fetcher);
 
   return (
-    <div className={`twetch-renderer__root${quoted ? ' twetch-renderer__root--quoted' : ''}`}>
+    <div className={clsx('twetch-renderer__root', quoted && 'twetch-renderer__root--quoted')}>
       {post ? (
         <Loaded post={post} quoted={quoted} />
       ) : (
