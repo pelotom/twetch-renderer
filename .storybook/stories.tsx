@@ -2,7 +2,7 @@ import { storiesOf } from '@storybook/react';
 import { useState } from 'react';
 import TwetchRenderer from '../src';
 
-import '../twetch-renderer.css';
+import '../styles.css';
 
 const cases: { txid: string; label: string }[] = [
   {
