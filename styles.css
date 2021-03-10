@@ -47,6 +47,11 @@
   background: #696969;
 }
 
+.twetch-renderer__header--icon {
+  background-position: center center;
+  background-size: cover;
+}
+
 .twetch-renderer__header p {
   margin: 0;
 }

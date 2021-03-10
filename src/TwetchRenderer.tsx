@@ -61,7 +61,10 @@ function Loaded({
     <>
       <header className="twetch-renderer__header">
         <a href={userHref}>
-          <img className="twetch-renderer__header--icon" src={user.icon} />
+          <div
+            className="twetch-renderer__header--icon"
+            style={{ backgroundImage: `url(${user.icon})` }}
+          />
         </a>
         <div className="twetch-renderer__user">
           <a className="twetch-renderer__user-name" href={userHref}>
