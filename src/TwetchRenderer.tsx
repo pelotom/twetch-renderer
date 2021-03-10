@@ -7,8 +7,6 @@ import useAsync from './useAsync';
 import { genericUrlRegex } from './util';
 import clsx from 'clsx';
 
-// import "./Twetch.css";
-
 export interface TwetchRendererProps {
   txid: string;
   quoted?: boolean;
