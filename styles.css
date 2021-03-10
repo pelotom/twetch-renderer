@@ -140,6 +140,30 @@
   height: 202px;
 }
 
+.twetch-renderer__media-grid--multi > * {
+  width: 50%;
+}
+.twetch-renderer__media-grid--odd > :first-child {
+  width: 100%;
+}
+
+.twetch-renderer__media-grid-item:first-child > * {
+  border-top-left-radius: 6px;
+}
+
+.twetch-renderer__media-grid--multi > .twetch-renderer__media-grid-item:nth-child(2) > *,
+.twetch-renderer__media-grid--odd > .twetch-renderer__media-grid-item:first-child > * {
+  border-top-right-radius: 6px;
+}
+
+.twetch-renderer__media-grid-item > * {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 /* Twitter */
 
 .twetch-renderer__twitter-preview .twetch-renderer__media-grid {
