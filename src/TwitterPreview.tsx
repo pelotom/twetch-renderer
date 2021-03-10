@@ -12,6 +12,7 @@ export default function TwitterPreview({ twitterData }: TwitterPreviewProps) {
 
   return (
     <div
+      className="twetch-renderer__twitter-preview"
       style={{
         // jss7227
         // width: "100%",
@@ -35,10 +36,7 @@ export default function TwitterPreview({ twitterData }: TwitterPreviewProps) {
           borderRadius: '6px 6px 0 0',
         }}
       >
-        <MediaGrid
-          media={media.map((url: string) => ({ type: 'image', url }))}
-          style={{ margin: -1 }}
-        />
+        <MediaGrid media={media.map((url: string) => ({ type: 'image', url }))} />
       </div>
       <p
         style={{

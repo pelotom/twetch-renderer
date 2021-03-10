@@ -117,3 +117,31 @@
 .twetch-renderer__body > :not(:first-child) {
   margin-top: 8px;
 }
+
+/* Media */
+
+.twetch-renderer__media-grid {
+  display: flex;
+  padding: 0;
+  flex-wrap: wrap;
+  list-style: none;
+  overflow-y: auto;
+}
+
+.twetch-renderer__media-grid-item {
+  position: relative;
+  flex-shrink: 0;
+  display: block;
+  padding: 2px;
+  box-sizing: border-box;
+}
+
+.twetch-renderer__media-grid--multi > .twetch-renderer__media-grid-item {
+  height: 202px;
+}
+
+/* Twitter */
+
+.twetch-renderer__twitter-preview .twetch-renderer__media-grid {
+  margin: -1px;
+}

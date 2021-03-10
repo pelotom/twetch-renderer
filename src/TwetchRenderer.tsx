@@ -51,15 +51,19 @@ function Loaded({
     [],
   );
 
+  const userHref = `https://twetch.app/u/${user.id}`;
+
   return (
     <>
       <header className="twetch-renderer__header">
-        <a className="twetch-renderer__header--icon" href={`https://twetch.app/u/${user.id}`}>
-          <img src={user.icon} />
+        <a href={userHref}>
+          <img className="twetch-renderer__header--icon" src={user.icon} />
         </a>
         <div className="twetch-renderer__user">
-          <a href={`/u/${user.id}`}>{user.name}</a>
-          <p>@{user.id}</p>
+          <a className="twetch-renderer__user-name" href={userHref}>
+            {user.name}
+          </a>
+          <p className="twetch-renderer__user-id">@{user.id}</p>
         </div>
         <div className="twetch-renderer__timestamp">
           <p>{createdAt.toLocaleDateString()}</p>
