@@ -96,4 +96,11 @@ const cases: { txid: string; label: string }[] = [
 ];
 
 const stories = storiesOf('cases', module);
-cases.forEach(({ txid, label }) => stories.add(label, () => <TwetchRenderer txid={txid} />));
+cases.forEach(({ txid, label }) =>
+  stories.add(label, () => (
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <h3>{txid}</h3>
+      <TwetchRenderer txid={txid} />
+    </div>
+  )),
+);
