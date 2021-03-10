@@ -1,6 +1,6 @@
 /* Top-level component */
 
-.TwetchRenderer {
+.twetch-renderer__root {
   width: 598px;
   border-radius: 6px;
   background-color: black;
@@ -11,12 +11,7 @@
   font-size: 20px;
 }
 
-.TwetchRenderer__Loading {
-  padding: 32px 0;
-  text-align: center;
-}
-
-.TwetchRenderer__Quoted {
+.twetch-renderer__root--quoted {
   width: auto;
   border: 1px solid #696969;
   cursor: pointer;
@@ -25,35 +20,40 @@
   border-radius: 6px;
 }
 
-.TwetchRenderer a {
+.twetch-renderer__loading {
+  padding: 32px 0;
+  text-align: center;
+}
+
+.twetch-renderer__root a {
   color: #0094ff;
   display: inline-block;
   word-break: break-word;
   text-decoration: none;
 }
 
-.TwetchRenderer__Header {
+.twetch-renderer__header {
   display: flex;
   padding: 16px 16px 0 16px;
   border-radius: 4px 4px 0 0;
 }
-.TwetchRenderer__Quoted > .TwetchRenderer__Header {
+.twetch-renderer__root--quoted > .twetch-renderer__header {
   padding: 8px;
   background: #696969;
 }
 
-.TwetchRenderer__Header p {
+.twetch-renderer__header p {
   margin: 0;
 }
 
-.TwetchRenderer__Header > a {
+.twetch-renderer__header > a {
   display: inline-block;
   position: relative;
   margin-right: 12px;
   vertical-align: top;
 }
 
-.TwetchRenderer__Header > a > * {
+.twetch-renderer__header > a > * {
   width: 24px;
   height: 24px;
   cursor: pointer;
@@ -61,13 +61,13 @@
   background-repeat: no-repeat;
 }
 
-.TwetchRenderer__User {
+.twetch-renderer__user {
   flex-grow: 1;
   max-width: 100%;
   width: 100%;
   display: inline-block;
 }
-.TwetchRenderer__User > a {
+.twetch-renderer__user > a {
   line-height: 24px;
   color: #f2f2f2;
   cursor: pointer;
@@ -82,7 +82,7 @@
   vertical-align: top;
   text-decoration: none;
 }
-.TwetchRenderer__User > p {
+.twetch-renderer__user > p {
   line-height: 24px;
   color: #c4c4c4;
   display: inline-block;
@@ -93,7 +93,7 @@
   vertical-align: top;
 }
 
-.TwetchRenderer__Timestamp {
+.twetch-renderer__timestamp {
   line-height: 24px;
   color: #c4c4c4;
   display: inline-block;
@@ -106,14 +106,14 @@
   white-space: nowrap;
 }
 
-.TwetchRenderer__Body {
+.twetch-renderer__body {
   margin: 16px;
 }
 
-.TwetchRenderer__Quoted .TwetchRenderer__Body {
+.twetch-renderer__root--quoted .twetch-renderer__body {
   margin: 8px;
 }
 
-.TwetchRenderer__Body > :not(:first-child) {
+.twetch-renderer__body > :not(:first-child) {
   margin-top: 8px;
 }

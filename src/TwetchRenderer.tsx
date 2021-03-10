@@ -18,11 +18,11 @@ export default function TwetchRenderer({ txid, quoted = false }: TwetchRendererP
   const post = useAsync(fetcher);
 
   return (
-    <div className={`TwetchRenderer${quoted ? ' TwetchRenderer__Quoted' : ''}`}>
+    <div className={`twetch-renderer__root${quoted ? ' twetch-renderer__root--quoted' : ''}`}>
       {post ? (
         <Loaded post={post} quoted={quoted} />
       ) : (
-        <div className="TwetchRenderer__Loading">Loading...</div>
+        <div className="twetch-renderer__loading">Loading...</div>
       )}
     </div>
   );
@@ -53,20 +53,20 @@ function Loaded({
 
   return (
     <>
-      <header className="TwetchRenderer__Header">
-        <a className="TwetchRenderer__Header--icon" href={`https://twetch.app/u/${user.id}`}>
+      <header className="twetch-renderer__header">
+        <a className="twetch-renderer__header--icon" href={`https://twetch.app/u/${user.id}`}>
           <img src={user.icon} />
         </a>
-        <div className="TwetchRenderer__User">
+        <div className="twetch-renderer__user">
           <a href={`/u/${user.id}`}>{user.name}</a>
           <p>@{user.id}</p>
         </div>
-        <div className="TwetchRenderer__Timestamp">
+        <div className="twetch-renderer__timestamp">
           <p>{createdAt.toLocaleDateString()}</p>
         </div>
       </header>
 
-      <div className="TwetchRenderer__Body">
+      <div className="twetch-renderer__body">
         {richText && <p>{richText}</p>}
 
         <LinkPreview text={text} />
