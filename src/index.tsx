@@ -1,1 +1,1 @@
-export { default, TwetchProps } from './Twetch';
+export { default, TwetchProps } from './TwetchRenderer';

@@ -13,7 +13,7 @@ export interface TwetchProps {
   quoted?: boolean;
 }
 
-export default function Twetch({ txid, quoted }: TwetchProps) {
+export default function TwetchRenderer({ txid, quoted }: TwetchProps) {
   const fetcher = useCallback(() => fetchTwetchPost(txid), [txid]);
   const post = useAsync(fetcher);
 
@@ -32,8 +32,8 @@ export default function Twetch({ txid, quoted }: TwetchProps) {
   );
 
   return (
-    <div className={`Twetch${quoted ? ' Twetch__Quoted' : ''}`}>
-      <div className="Twetch__Header">
+    <div className={`TwetchRenderer${quoted ? ' TwetchRenderer__Quoted' : ''}`}>
+      <header className="TwetchRenderer__Header">
         <a href={`/u/${user.id}`}>
           <div
             style={{
@@ -43,16 +43,16 @@ export default function Twetch({ txid, quoted }: TwetchProps) {
             }}
           ></div>
         </a>
-        <div className="Twetch__User">
+        <div className="TwetchRenderer__User">
           <a href={`/u/${user.id}`}>{user.name}</a>
           <p>@{user.id}</p>
         </div>
-        <div className="Twetch__Timestamp">
+        <div className="TwetchRenderer__Timestamp">
           <p>{createdAt.toLocaleDateString()}</p>
         </div>
-      </div>
+      </header>
 
-      <div className="Twetch__Body">
+      <div className="TwetchRenderer__Body">
         {richText && <p>{richText}</p>}
 
         <LinkPreview text={text} />
@@ -63,7 +63,7 @@ export default function Twetch({ txid, quoted }: TwetchProps) {
           <TwitterPreview twitterData={twitterData} />
         )}
 
-        {quotedTwetch && !quoted && <Twetch txid={quotedTwetch} quoted />}
+        {quotedTwetch && !quoted && <TwetchRenderer txid={quotedTwetch} quoted />}
 
         <MediaGrid media={files} />
       </div>
