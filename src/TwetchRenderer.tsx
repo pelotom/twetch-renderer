@@ -22,7 +22,7 @@ export default function TwetchRenderer({ txid, quoted = false }: TwetchRendererP
       {post ? (
         <Loaded post={post} quoted={quoted} />
       ) : (
-        <div style={{ padding: '32px 0', textAlign: 'center' }}>Loading...</div>
+        <div className="TwetchRenderer__Loading">Loading...</div>
       )}
     </div>
   );
@@ -54,14 +54,8 @@ function Loaded({
   return (
     <>
       <header className="TwetchRenderer__Header">
-        <a href={`/u/${user.id}`}>
-          <div
-            style={{
-              backgroundPosition: 'center center',
-              backgroundSize: 'cover',
-              backgroundImage: `url(${user.icon})`,
-            }}
-          ></div>
+        <a className="TwetchRenderer__Header--icon" href={`https://twetch.app/u/${user.id}`}>
+          <img src={user.icon} />
         </a>
         <div className="TwetchRenderer__User">
           <a href={`/u/${user.id}`}>{user.name}</a>
