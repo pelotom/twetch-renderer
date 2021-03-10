@@ -1,8 +1,8 @@
-import React, { useCallback } from 'react';
-import fetchTwetchPost from './data/fetchTwetchPost';
+import React, { useCallback, useMemo } from 'react';
+import fetchTwetchPost, { TwetchPost } from './data/fetchTwetchPost';
 import LinkPreview from './LinkPreview';
-import TwitterPreview from './TwitterPreview';
 import MediaGrid from './MediaGrid';
+import TwitterPreview from './TwitterPreview';
 import useAsync from './useAsync';
 import { genericUrlRegex } from './util';
 
@@ -13,26 +13,46 @@ export interface TwetchRendererProps {
   quoted?: boolean;
 }
 
-export default function TwetchRenderer({ txid, quoted }: TwetchRendererProps) {
+export default function TwetchRenderer({ txid, quoted = false }: TwetchRendererProps) {
   const fetcher = useCallback(() => fetchTwetchPost(txid), [txid]);
   const post = useAsync(fetcher);
 
-  if (!post) return <span>Loading...</span>;
+  return (
+    <div className={`TwetchRenderer${quoted ? ' TwetchRenderer__Quoted' : ''}`}>
+      {post ? (
+        <Loaded post={post} quoted={quoted} />
+      ) : (
+        <div style={{ padding: '32px 0', textAlign: 'center' }}>Loading...</div>
+      )}
+    </div>
+  );
+}
 
-  const { createdAt, user, text, bitcoinFilesMedia, quotedTwetch, twitterData, files } = post;
+interface LoadedProps {
+  post: TwetchPost;
+  quoted: boolean;
+}
 
-  const richText = text.split(genericUrlRegex).map((segment, index) =>
-    genericUrlRegex.test(segment) ? (
-      <a key={index} href={segment}>
-        {segment}
-      </a>
-    ) : (
-      segment
-    ),
+function Loaded({
+  post: { createdAt, user, text, bitcoinFilesMedia, quotedTwetch, twitterData, files },
+  quoted,
+}: LoadedProps) {
+  const richText = useMemo(
+    () =>
+      text.split(genericUrlRegex).map((segment, index) =>
+        genericUrlRegex.test(segment) ? (
+          <a key={index} href={segment}>
+            {segment}
+          </a>
+        ) : (
+          segment
+        ),
+      ),
+    [],
   );
 
   return (
-    <div className={`TwetchRenderer${quoted ? ' TwetchRenderer__Quoted' : ''}`}>
+    <>
       <header className="TwetchRenderer__Header">
         <a href={`/u/${user.id}`}>
           <div
@@ -67,6 +87,6 @@ export default function TwetchRenderer({ txid, quoted }: TwetchRendererProps) {
 
         <MediaGrid media={files} />
       </div>
-    </div>
+    </>
   );
 }
