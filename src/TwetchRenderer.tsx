@@ -8,12 +8,12 @@ import { genericUrlRegex } from './util';
 
 // import "./Twetch.css";
 
-export interface TwetchProps {
+export interface TwetchRendererProps {
   txid: string;
   quoted?: boolean;
 }
 
-export default function TwetchRenderer({ txid, quoted }: TwetchProps) {
+export default function TwetchRenderer({ txid, quoted }: TwetchRendererProps) {
   const fetcher = useCallback(() => fetchTwetchPost(txid), [txid]);
   const post = useAsync(fetcher);
 
