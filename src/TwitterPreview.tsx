@@ -8,10 +8,13 @@ interface TwitterPreviewProps {
 export default function TwitterPreview({ twitterData }: TwitterPreviewProps) {
   if (!twitterData) return null;
 
-  const { text, media, user } = twitterData;
+  const { text, media, user, twt_id } = twitterData;
 
   return (
-    <div className="twetch-renderer__twitter-preview">
+    <a
+      href={`https://twitter.com/${user.screen_name}/status/${twt_id}`}
+      className="twetch-renderer__twitter-preview"
+    >
       <div className="twetch-renderer__twitter-preview-media">
         <MediaGrid media={media.map((url: string) => ({ type: 'image', url }))} />
       </div>
@@ -26,6 +29,6 @@ export default function TwitterPreview({ twitterData }: TwitterPreviewProps) {
           <p>twitter.com</p>
         </div>
       </header>
-    </div>
+    </a>
   );
 }
