@@ -17,7 +17,7 @@ function YouTube({ videoId }: YouTubeProps) {
       title="YouTube video player"
       width="566"
       height="318.375"
-      src={`https://www.youtube.com/embed/${videoId}?autoplay=1&amp;enablejsapi=1&amp;origin=https%3A%2F%2Ftwetch.app&amp;widgetid=1`}
+      src={`https://www.youtube.com/embed/${videoId}?enablejsapi=1&origin=https%3A%2F%2Ftwetch.app`}
     ></iframe>
   );
 }
