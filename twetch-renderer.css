@@ -1,21 +1,15 @@
-.Twetch a {
-  color: #0094ff;
-  display: inline-block;
-  word-break: break-word;
-  text-decoration: none;
-}
-
 .Twetch {
   width: 598px;
   border-radius: 6px;
   background-color: black;
   color: white;
-  font-size: 20px;
   white-space: pre-wrap;
   overflow: hidden; /* prevents margin collapse */
+  font-family: sans-serif;
+  font-size: 20px;
 }
 
-.Twetch--Quoted {
+.Twetch__Quoted {
   width: auto;
   border: 1px solid #696969;
   cursor: pointer;
@@ -24,28 +18,35 @@
   border-radius: 6px;
 }
 
-.Twetch--Header {
+.Twetch a {
+  color: #0094ff;
+  display: inline-block;
+  word-break: break-word;
+  text-decoration: none;
+}
+
+.Twetch__Header {
   display: flex;
   padding: 16px 16px 0 16px;
   border-radius: 4px 4px 0 0;
 }
-.Twetch--Quoted > .Twetch--Header {
+.Twetch__Quoted > .Twetch__Header {
   padding: 8px;
   background: #696969;
 }
 
-.Twetch--Header p {
+.Twetch__Header p {
   margin: 0;
 }
 
-.Twetch--Header > a {
+.Twetch__Header > a {
   display: inline-block;
   position: relative;
   margin-right: 12px;
   vertical-align: top;
 }
 
-.Twetch--Header > a > * {
+.Twetch__Header > a > * {
   width: 24px;
   height: 24px;
   cursor: pointer;
@@ -53,13 +54,13 @@
   background-repeat: no-repeat;
 }
 
-.Twetch--User {
+.Twetch__User {
   flex-grow: 1;
   max-width: 100%;
   width: 100%;
   display: inline-block;
 }
-.Twetch--User > a {
+.Twetch__User > a {
   line-height: 24px;
   color: #f2f2f2;
   cursor: pointer;
@@ -74,7 +75,7 @@
   vertical-align: top;
   text-decoration: none;
 }
-.Twetch--User > p {
+.Twetch__User > p {
   line-height: 24px;
   color: #c4c4c4;
   display: inline-block;
@@ -85,7 +86,7 @@
   vertical-align: top;
 }
 
-.Twetch--Timestamp {
+.Twetch__Timestamp {
   line-height: 24px;
   color: #c4c4c4;
   display: inline-block;
@@ -98,14 +99,14 @@
   white-space: nowrap;
 }
 
-.Twetch .Twetch--Body {
+.Twetch .Twetch__Body {
   margin: 16px;
 }
 
-.Twetch--Quoted .Twetch--Body {
+.Twetch__Quoted .Twetch__Body {
   margin: 8px;
 }
 
-.Twetch--Body > :not(:first-child) {
+.Twetch__Body > :not(:first-child) {
   margin-top: 8px;
 }

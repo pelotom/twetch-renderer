@@ -32,8 +32,8 @@ export default function Twetch({ txid, quoted }: TwetchProps) {
   );
 
   return (
-    <div className={`Twetch${quoted ? ' Twetch--Quoted' : ''}`}>
-      <div className="Twetch--Header">
+    <div className={`Twetch${quoted ? ' Twetch__Quoted' : ''}`}>
+      <div className="Twetch__Header">
         <a href={`/u/${user.id}`}>
           <div
             style={{
@@ -43,16 +43,16 @@ export default function Twetch({ txid, quoted }: TwetchProps) {
             }}
           ></div>
         </a>
-        <div className="Twetch--User">
+        <div className="Twetch__User">
           <a href={`/u/${user.id}`}>{user.name}</a>
           <p>@{user.id}</p>
         </div>
-        <div className="Twetch--Timestamp">
+        <div className="Twetch__Timestamp">
           <p>{createdAt.toLocaleDateString()}</p>
         </div>
       </div>
 
-      <div className="Twetch--Body">
+      <div className="Twetch__Body">
         {richText && <p>{richText}</p>}
 
         <LinkPreview text={text} />
