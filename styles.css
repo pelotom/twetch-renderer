@@ -166,6 +166,65 @@
 
 /* Twitter */
 
-.twetch-renderer__twitter-preview .twetch-renderer__media-grid {
+.twetch-renderer__twitter-preview {
+  cursor: pointer;
+  display: block;
+  margin-top: 8px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  position: relative;
+  background: #022640;
+  text-decoration: none;
+}
+
+.twetch-renderer__twitter-preview-media {
+  width: calc(100% + 24px);
+  margin: -12px 0 12px -12px;
+  border-radius: 6px 6px 0 0;
+}
+.twetch-renderer__twitter-preview-media > * {
   margin: -1px;
+}
+
+.twetch-renderer__twitter-preview-text {
+  font-size: 16px;
+  line-height: 21px;
+}
+
+.twetch-renderer__twitter-preview p {
+  margin: 0;
+
+  color: #f2f2f2;
+  white-space: pre-line;
+  text-decoration: none;
+
+  font-family: proxima-nova, Helvetica;
+  font-weight: 400;
+}
+
+.twetch-renderer__twitter-preview header {
+  display: flex;
+  margin-top: 10px;
+}
+
+.twetch-renderer__twitter-preview header > img {
+  width: 30px;
+  height: 30px;
+  margin-right: 12px;
+  border-radius: 100%;
+}
+
+.twetch-renderer__twitter-preview header p {
+  line-height: 15px;
+  font-size: 12px;
+}
+
+p.twetch-renderer__twitter-preview-username {
+  font-weight: bold;
+  word-break: break-word;
+}
+
+.twetch-renderer__twitter-preview-handle {
+  font-weight: normal;
+  margin-left: 6px;
 }
