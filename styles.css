@@ -10,6 +10,7 @@
   font-family: sans-serif;
   font-size: 20px;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .twetch-renderer__root--quoted {
@@ -32,9 +33,8 @@
   word-break: break-word;
   text-decoration: none;
 }
-
-.twetch-renderer__root p {
-  color: white;
+.twetch-renderer__root a:hover {
+  text-decoration: underline;
 }
 
 .twetch-renderer__header {

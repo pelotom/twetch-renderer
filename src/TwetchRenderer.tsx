@@ -17,16 +17,18 @@ export default function TwetchRenderer({ txid, quoted = false }: TwetchRendererP
   const post = useAsync(fetcher);
 
   return (
-    <a
-      href={`https://twetch.app/t/${txid}`}
+    <div
       className={clsx('twetch-renderer__root', quoted && 'twetch-renderer__root--quoted')}
+      onClick={() => {
+        window.location.href = `https://twetch.app/t/${txid}`;
+      }}
     >
       {post ? (
         <Loaded post={post} quoted={quoted} />
       ) : (
         <div className="twetch-renderer__loading">Loading...</div>
       )}
-    </a>
+    </div>
   );
 }
 

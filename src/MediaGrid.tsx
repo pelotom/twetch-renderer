@@ -11,7 +11,7 @@ export default function MediaGrid({ media }: MediaGridProps) {
 
   const openImage = useCallback((e, url: string) => {
     e.preventDefault();
-    console.log('wtf', url);
+    e.stopPropagation();
     setImageSlide(url);
   }, []);
 
@@ -45,6 +45,7 @@ export default function MediaGrid({ media }: MediaGridProps) {
         <div
           onClick={e => {
             e.preventDefault();
+            e.stopPropagation();
             setImageSlide(undefined);
           }}
         >
