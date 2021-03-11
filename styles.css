@@ -230,6 +230,10 @@
   font-weight: 400;
 }
 
+.twetch-renderer__twitter-preview > a {
+  display: block;
+}
+
 .twetch-renderer__twitter-preview header {
   display: flex;
   margin-top: 10px;
