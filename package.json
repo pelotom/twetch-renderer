@@ -1,6 +1,6 @@
 {
   "name": "twetch-renderer",
-  "version": "0.1.7",
+  "version": "1.0.0",
   "description": "A renderer of Twetch posts",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
