@@ -179,7 +179,7 @@
 }
 
 .twetch-renderer__media-grid-close {
-  position: absolute;
+  position: fixed;
   top: 8px;
   right: 8px;
   width: 32px;
