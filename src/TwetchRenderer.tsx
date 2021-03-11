@@ -6,25 +6,26 @@ import TwitterPreview from './TwitterPreview';
 import useAsync from './useAsync';
 import { genericUrlRegex } from './util';
 import clsx from 'clsx';
+import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 
 export interface TwetchRendererProps {
   txid: string;
-  quoted?: boolean;
+  isQuoted?: boolean;
 }
 
-export default function TwetchRenderer({ txid, quoted = false }: TwetchRendererProps) {
+export default function TwetchRenderer({ txid, isQuoted = false }: TwetchRendererProps) {
   const fetcher = useCallback(() => fetchTwetchPost(txid), [txid]);
   const post = useAsync(fetcher);
 
   return (
     <div
-      className={clsx('twetch-renderer__root', quoted && 'twetch-renderer__root--quoted')}
+      className={clsx('twetch-renderer__root', isQuoted && 'twetch-renderer__root--quoted')}
       onClick={() => {
         window.location.href = `https://twetch.app/t/${txid}`;
       }}
     >
       {post ? (
-        <Loaded post={post} quoted={quoted} />
+        <Loaded post={post} isQuoted={isQuoted} />
       ) : (
         <div className="twetch-renderer__loading">Loading...</div>
       )}
@@ -34,12 +35,22 @@ export default function TwetchRenderer({ txid, quoted = false }: TwetchRendererP
 
 interface LoadedProps {
   post: TwetchPost;
-  quoted: boolean;
+  isQuoted: boolean;
 }
 
 function Loaded({
-  post: { createdAt, user, text, bitcoinFilesMedia, quotedTwetch, twitterData, files },
-  quoted,
+  post: {
+    createdAt,
+    user,
+    text,
+    numLikes,
+    numBranches,
+    bitcoinFilesMedia,
+    quotedTwetch,
+    twitterData,
+    files,
+  },
+  isQuoted,
 }: LoadedProps) {
   const richText = useMemo(
     () =>
@@ -88,10 +99,21 @@ function Loaded({
           <TwitterPreview twitterData={twitterData} />
         )}
 
-        {quotedTwetch && !quoted && <TwetchRenderer txid={quotedTwetch} quoted />}
+        {quotedTwetch && !isQuoted && <TwetchRenderer txid={quotedTwetch} isQuoted />}
 
         <MediaGrid media={files} />
       </div>
+
+      {!isQuoted && (
+        <div className="twetch-renderer__stats">
+          <div>
+            <span>{numLikes}</span> Likes
+          </div>
+          <div>
+            <span>{numBranches}</span> Branches
+          </div>
+        </div>
+      )}
     </>
   );
 }

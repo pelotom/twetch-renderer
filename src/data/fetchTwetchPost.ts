@@ -12,6 +12,8 @@ export interface TwetchPost {
     icon: string;
   };
   text: string;
+  numLikes: number;
+  numBranches: number;
   // map: Record<string, string>;
   bitcoinFilesMedia?: Media;
   quotedTwetch?: string;
@@ -33,13 +35,17 @@ export default async function fetchTwetchPost(txid: string): Promise<TwetchPost>
         // bContent,
         files,
         // mapTwdata
-        // ...post
+        numLikes,
+        numBranches,
+        ...post
       },
     },
   ] = await Promise.all([
     fetchOnChainData(txid),
     request('https://api.twetch.app/v1/graphql', twetchPostQuery, { txid }),
   ]);
+
+  // console.log(post)
 
   // console.log(onChainData)
 
@@ -71,6 +77,8 @@ export default async function fetchTwetchPost(txid: string): Promise<TwetchPost>
       name,
       icon,
     },
+    numLikes: Number(numLikes),
+    numBranches: Number(numBranches),
     // text,
     // bitcoinFilesMedia,
     // quotedTwetch,

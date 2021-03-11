@@ -132,6 +132,20 @@
   margin-top: 8px;
 }
 
+.twetch-renderer__stats {
+  margin: 16px;
+  display: flex;
+  font-weight: 300;
+}
+.twetch-renderer__stats > * {
+  margin-right: 24px;
+}
+.twetch-renderer__stats > * > :first-child {
+  margin-right: 2px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
 /* Media */
 
 .twetch-renderer__media-grid {
