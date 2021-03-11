@@ -6,7 +6,6 @@ import TwitterPreview from './TwitterPreview';
 import useAsync from './useAsync';
 import { genericUrlRegex } from './util';
 import clsx from 'clsx';
-import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 
 export interface TwetchRendererProps {
   txid: string;
