@@ -3453,7 +3453,7 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
-classnames@^2.2.5:
+classnames@^2.2.5, classnames@^2.2.6:
   version "2.2.6"
   resolved "https://registry.npmjs.org/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
   integrity sha512-JR/iSQOSt+LQIWwrwEzJ9uk0xfN3mTVYMwt1Ir5mUcSN6pU+V4zQFFaJsclJbPuAUQH+yfWef6tm7l1quW3C8Q==
@@ -3882,6 +3882,11 @@ css-what@^3.2.1:
   version "3.4.2"
   resolved "https://registry.npmjs.org/css-what/-/css-what-3.4.2.tgz#ea7026fcb01777edbde52124e21f327e7ae950e4"
   integrity sha512-ACUm3L0/jiZTqfzRM3Hi9Q8eZqd6IK37mMWPLz9PJxkLWllYeRf+EHUSHYEtFop2Eqytaq1FizFVh7XfBnXCDQ==
+
+css3transform@^1.1.9:
+  version "1.2.3"
+  resolved "https://registry.npmjs.org/css3transform/-/css3transform-1.2.3.tgz#dbb6c7f706224bbf29239ca6625877c4bf75b68d"
+  integrity sha512-6VmJ0s6X+mUuYh0xAxqhSi0i3vt52gAu3lL1mBoXLYPGfPHOm2pjYNRDYD6pdrBrszU/4njk5a9t6K2JjwX1Yg==
 
 cssesc@^3.0.0:
   version "3.0.0"
@@ -6204,6 +6209,11 @@ lodash.debounce@^4.0.8:
   resolved "https://registry.npmjs.org/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
   integrity sha1-gteb/zCmfEAF/9XiUVMArZyk168=
 
+lodash.throttle@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.npmjs.org/lodash.throttle/-/lodash.throttle-4.1.1.tgz#c23e91b710242ac70c37f1e1cda9274cc39bf2f4"
+  integrity sha1-wj6RtxAkKscMN/HhzaknTMOb8vQ=
+
 lodash.uniq@4.5.0:
   version "4.5.0"
   resolved "https://registry.npmjs.org/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
@@ -7679,6 +7689,15 @@ react-hotkeys@2.0.0:
   integrity sha512-3n3OU8vLX/pfcJrR3xJ1zlww6KS1kEJt0Whxc4FiGV+MJrQ1mYSYI3qS/11d2MJDFm8IhOXMTFQirfu6AVOF6Q==
   dependencies:
     prop-types "^15.6.1"
+
+react-imageslides@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.npmjs.org/react-imageslides/-/react-imageslides-2.1.1.tgz#0c90c7494bd61593ca620af0626fb70595e43219"
+  integrity sha512-sukbI2a6gQp9sLCESNJu7FH43CUj91gskS14c8UTUGmMlTTZhlGfoRAwnBvkZfEwtvqahZ3W6ATAcFw55QwhPA==
+  dependencies:
+    classnames "^2.2.6"
+    css3transform "^1.1.9"
+    lodash.throttle "^4.1.1"
 
 react-inspector@^5.0.1:
   version "5.1.0"

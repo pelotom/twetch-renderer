@@ -8,7 +8,8 @@
     "@types/react": "^17.0.3",
     "bpu": "^0.0.13",
     "graphql": "^15.5.0",
-    "graphql-request": "^3.4.0"
+    "graphql-request": "^3.4.0",
+    "react-imageslides": "^2.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.13.10",

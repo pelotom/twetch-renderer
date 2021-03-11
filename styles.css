@@ -178,6 +178,20 @@
   background-position: center;
 }
 
+.twetch-renderer__media-grid-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 32px;
+  height: 32px;
+  fill: white;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  z-index: 1000;
+  cursor: pointer;
+}
+
 /* Twitter */
 
 .twetch-renderer__twitter-preview {
